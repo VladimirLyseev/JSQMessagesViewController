@@ -110,6 +110,8 @@ FOUNDATION_EXPORT NSString * const JSQMessagesKeyboardControllerUserInfoKeyKeybo
  */
 @property (assign, nonatomic, readonly) CGRect currentKeyboardFrame;
 
+@property (assign, nonatomic) BOOL panGestureHandle;
+
 /**
  *  Not a valid initializer.
  */
