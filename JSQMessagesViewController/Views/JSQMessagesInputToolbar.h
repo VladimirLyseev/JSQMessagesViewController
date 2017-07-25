@@ -52,6 +52,12 @@
 
 @end
 
+@protocol JSQAltInputToolbarProtocol <NSObject>
+
+-(UITextView *)jsq_textView;
+
+@end
+
 
 /**
  *  An instance of `JSQMessagesInputToolbar` defines the input toolbar for

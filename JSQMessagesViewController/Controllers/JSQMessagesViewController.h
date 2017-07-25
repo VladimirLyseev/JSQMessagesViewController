@@ -45,7 +45,7 @@
  */
 @property (weak, nonatomic, readonly) JSQMessagesInputToolbar *inputToolbar;
 
-@property (weak, nonatomic) UITextView *customInputTextView;
+@property (weak, nonatomic) id<JSQAltInputToolbarProtocol> altInputToolbar;
 
 /**
  *  Returns the keyboard controller object used to manage the software keyboard.

@@ -904,7 +904,7 @@ JSQMessagesKeyboardControllerDelegate>
 
 - (void)keyboardController:(JSQMessagesKeyboardController *)keyboardController keyboardDidChangeFrame:(CGRect)keyboardFrame
 {
-    if (!([self.inputToolbar.contentView.textView isFirstResponder] || [_customInputTextView isFirstResponder]) && self.toolbarBottomLayoutGuide.constant == 0.0) {
+    if (!([self.inputToolbar.contentView.textView isFirstResponder] || [_altInputToolbar.jsq_textView isFirstResponder]) && self.toolbarBottomLayoutGuide.constant == 0.0) {
         return;
     }
 
@@ -1054,8 +1054,10 @@ JSQMessagesKeyboardControllerDelegate>
 
 - (void)jsq_updateCollectionViewInsets
 {
+    CGRect inputBarFrame = self.altInputToolbar ? ((UIView *)self.altInputToolbar).frame : self.inputToolbar.frame;
+    
     [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length + self.topContentAdditionalInset
-                                  bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
+                                  bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(inputBarFrame)];
 }
 
 - (void)jsq_setCollectionViewInsetsTopValue:(CGFloat)top bottomValue:(CGFloat)bottom
