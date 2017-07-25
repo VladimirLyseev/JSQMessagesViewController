@@ -904,7 +904,7 @@ JSQMessagesKeyboardControllerDelegate>
 
 - (void)keyboardController:(JSQMessagesKeyboardController *)keyboardController keyboardDidChangeFrame:(CGRect)keyboardFrame
 {
-    if (![self.inputToolbar.contentView.textView isFirstResponder] && self.toolbarBottomLayoutGuide.constant == 0.0) {
+    if (!([self.inputToolbar.contentView.textView isFirstResponder] || [_customInputTextView isFirstResponder]) && self.toolbarBottomLayoutGuide.constant == 0.0) {
         return;
     }
 
